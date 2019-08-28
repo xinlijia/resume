@@ -1,0 +1,292 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,9pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{fontspec}
+\robustify\cftdotfill
+
+\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.45in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7.5in}
+\setlength{\topmargin}{-0.4in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{0pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{1pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[7.35in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7.1in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Xinli Jia} \\
+Email: jiaxinli93@gmail.com & Phone: 1 347-331-9714 \\
+LinkedIn: linkedin.com/in/xinli-jia
+\end{tabular*}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+
+\item
+
+	\ressubheading{Columbia University}{New York, U.S.}{Master of Science in Electrical  Engineering and Computer Science}{Sept 2016 - Dec 2017}
+
+	
+
+
+
+
+\item
+
+	\ressubheading{Shanghai Jiao Tong University}{Shanghai, China}{Bachelor of Science in Electrical and Computer Engineering}{Sept 2012 - June 2016}
+
+	
+	
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+	\item {\bf Programming Languages:} Python \textbullet{} Go \textbullet{} Java \textbullet{} Bash \textbullet{} SQL \\
+	\item {\bf Cloud:} AWS \textbullet{} Microsoft Azure \textbullet{} GCP \\
+	\item {\bf Database \& Data Warehouse:} MongoDB \textbullet{} PostgreSQL \textbullet{} Citus \textbullet{} Redshift \\
+	\item {\bf Other:} Git \textbullet{} Kubernetes \textbullet{} Docker \textbullet{} Jenkins \\
+	% \item {\bf Operating System:}  Linux \textbullet{} MacOS
+% \item {\bf Web:} Django  \textbullet{} Redux \textbullet{} React.js \textbullet{} Node.js \textbullet{} HTML \textbullet{} CSS\\
+% \item {\bf Tools:} TensorFlow \textbullet{} AWS EC2   \textbullet{} Kinesis \textbullet{} Lambda \textbullet{} S3 \textbullet{} SQL \textbullet{} MongoDB \textbullet{} PostgreSQL  \textbullet{} Flask\\
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+
+\ressubheading{Clarifai Inc.}{New York, NY}{Backend Engineer}{Oct 2018 - Present}
+\begin{itemize}
+	\resitem{
+		Azure On-prem project
+		\begin{itemize}
+			\resitem[\bullet]{Deployed on-prem Clarifai’s platform to \textbf{Azure} with most features of main platform.}
+			\resitem[\bullet]{Deployed api services, database and monitors( EFK, Datadog).}
+			\resitem[\bullet]{Designed and implemented license, encryption and code obfuscation.}
+			\resitem[\bullet]{Compiled binary \textbf{Python} services and tests by Nuitka; Created pipeline jobs on Jenkins.}
+			\resitem[\bullet]{Transferred data of customer to the on-prem platform.}
+		\end{itemize}
+	}
+	\resitem{
+		Implemented Model Fetching service
+		\begin{itemize}
+			\resitem[\bullet]{Implemented \textbf{Golang} api endpoint with Redis cache.}
+            \resitem[\bullet]{Configured and deployed Kubernetes containers.}
+			\resitem[\bullet]{Implemented GRPC server and clients.}
+			\resitem[\bullet]{Implemented \textbf{Python} services that transform and export models in different formats.}
+		\end{itemize}
+	}
+	\resitem{
+		Implemented SDK Billing service
+		\begin{itemize}
+			\resitem[\bullet]{Implemented \textbf{Golang} api endpoints that collect logs and pipeline to S3 and Redshift.}
+            \resitem[\bullet]{Migrated Redshift \& Postgres database by Goose.}
+            \resitem[\bullet]{Configured and deployed \textbf{Kubernetes} containers.}
+		\end{itemize}
+	}
+	\resitem{
+		Platform ops
+		\begin{itemize}
+			\resitem[\bullet]{Monitored and troubleshot platform issues.}
+			\resitem[\bullet]{Fixed build bugs and implemented new features on Jenkins.}
+		\end{itemize}
+	}
+			
+\end{itemize}
+
+
+\item
+
+	\ressubheading{Huawei Technologies}{Santa Clara, CA}{Software Engineer}{May 2018 - Oct 2018}
+	\begin{itemize}
+            \resitem{Designed and implemented the backend of an online  \textbf{Python} debugger which supports local and remote debugging and switching on different virtual environments.}
+            \resitem{Integrated the debugger into an event-driven system with message queue, \textbf{MongoDB}, \textbf{PostgreSQL} and  \textbf{REST} API by \textbf{Flask}, which allow the debugger to transfer commands with user-interface of different users.}
+            \resitem{Implemented \textbf{Kafka} consumer and producer which support ETL and data pipeline process.}
+	\end{itemize}
+
+
+
+
+
+\item
+	\ressubheading{Bankrate, Inc}{New York, NY}{Software Engineer Intern}{June 2017 - Dec 2017}
+	\begin{itemize}
+			\resitem{Documented and redesigned ETL packages that connect among SQL server, AWS S3, Snowflake and Wordsmith. Implemented them as cloud apps with monitoring system such as\textbf{ Datadog} and \textbf{Rollbar}}.
+\iffalse
+
+			\resitem{Implemented data filters and cleaners in  \textbf{Python} to transform data and pipeline to \textbf{Snowflake} by \textbf{Alooma}. }
+\fi
+			
+\iffalse
+			\resitem{Magnaged \textbf{Github} repositories of Data Engineering team. Migrated \textbf{SQL} codes and \textbf{SSIS} packages using Git.}
+\fi
+\resitem{Implemented an \textbf{AWS Lambda} function in \textbf{Python} and \textbf{Go} which daily updated data on SQL server as consumer for \textbf{AWS Kinesis Stream} and monitor possible alerts.}
+
+\resitem{Built an \textbf{AWS Lambda} function in \textbf{Python} to export daily \textbf{Big Query} data as JSON into \textbf{Google Cloud Storage}.}
+
+
+	\end{itemize}
+
+
+
+
+% \item
+
+% 	\ressubheading{Logic Solutions Corp., China Office, Shanghai}{Shanghai, China}{Software Engineer Intern}{Sept 2015-Dec 2015}
+% 	\begin{itemize}
+%             \resitem{Contributed to designing an Apple Watch APP, \textit{ActiveFitConference}, to bring the athletic lifestyle into the conference room.}
+%             \resitem{Conducted a systematic study and received training on APP development on OS X.}
+%             \resitem{Conducted a review on related products and a market analysis, and completed a proposal for APP functions and architectures.}
+% 	\end{itemize}
+
+
+
+
+\end{itemize}
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \resheading{Projects}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{itemize}
+
+% \item
+% 	\ressubheading{Interactive City Guide}{Columbia University, New York, NY}{Machine Learning Course Project}{Sept 2017-Dec 2017}
+% 	\begin{itemize}
+% 			\resitem{Built image classifiers using \textbf{TensorFlow} \textbf{Python} Module to predict the landscape according to a taken picture, reached a best accuracy over 80\%.}
+% 				\resitem{Implemented a text-to-speech system by \textbf{TensorFlow} based on the concept of Tacotron, which could generate human-like audio of over 4/5 MOS(Mean Opinion Score).}
+% 	\end{itemize}
+
+
+% \iffalse
+% \item
+% 	\ressubheading{In-car Music Recommender}{Columbia University, New York, NY}{Internet of Things Course Project}{Feb 2017-May 2017}
+% 	\begin{itemize}
+% 		\resitem{Built a model on \textbf{AWS} Machine Learning to recommend appropriate music based on factors of driving.}
+% 		\resitem{Used \textbf{Kinesis Stream} to update the model in real time and built a web APP using \textbf{Django} to demo the results. }
+% 	\end{itemize}
+% \fi
+
+% \item
+% 	\ressubheading{Predicting Stock Movement}{Columbia University, New York, NY}{Big Data Analysis Course Project}{Sept 2016-Dec 2016}
+	
+% 	\begin{itemize}
+% 		\resitem{Analyzed the particular stock trends based on historical movement using \textbf{Hadoop}.}
+
+% 		\resitem{Used \textbf{R} to clean the data and run the model on \textbf{Databricks} and built a model to predict price trends using \textbf{Spark Python}.}
+% 		\resitem{Built a web App using \textbf{Django} to demo the results. }
+
+% 	\end{itemize}
+
+% \iffalse
+
+% \item
+% 	\ressubheading{Coordinate System Grapher Language}{Columbia University, New York, NY}{Programming
+% Languages and Translators Course Project}{Sept 2016-Dec 2016}
+	
+% 	\begin{itemize}
+% 		\resitem{Implemented a programming language in \textbf{Ocaml} to plot graph in coordinate system.}
+%     		\resitem{Created a compiler by \textbf{Ocaml} to translate source program to \textbf{LLVM}}
+
+% 	\end{itemize}
+
+% \fi
+
+% \iffalse
+
+% \item
+% 	\ressubheading{Crowdsourced Indoor Localization Based on WiFi Signals}{SJTU, Shanghai, China}{Research Project}{Jan 2015-June 2016}
+	
+% 	\begin{itemize}
+% 		\resitem{Proposed and implemented a crowdsources peer-assisted indoor positioning system based on WiFi signals.}
+%     \resitem{Adopted a core algorithm of FeetSLAM techniques (Simultaneous Localization and Mapping for pedestrians), and 
+%        contributed to the algorithm implementation in \textbf{Matlab} and \textbf{Java}. }
+%        \resitem{Achieved an average positioning accuracy of within 2m performance in different environments.}   
+% 	\end{itemize}
+% \fi
+	
+% \iffalse
+% \item 
+% 	\ressubheading{A Novel Face Recognition Algorithm}{SJTU, Shanghai, China}{Research Project}{Mar 2014-Oct 2014}
+% 	\begin{itemize}
+% 		\resitem{Led a team of 3 students, and developed a novel face recognition algorithm by combining the principle component analysis 
+%        (PCA) method and the Local Binary Pattern (LBP) method.}
+%     \resitem{Developed mathematical models for the algorithm, implemented it and conducted several metrics tests for evaluation.}
+%     \resitem{Demonstrated a recognition accuracy higher than 96\%, comparable to many state-of-the-art methods.}
+%     \resitem{Filed a Chinese patent on this work: ‘\textit{X. Jia, B. Li, L. Tian, X. Hao and T. Sun, Patent No. 2014106082274, Oct. 2014.}’}
+% 	\end{itemize}
+% \fi
+	
+
+	
+
+% \end{itemize}
+
+
+
+\end{document}
